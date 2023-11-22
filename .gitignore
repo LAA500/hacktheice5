@@ -17,3 +17,5 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+.LAA500_SSH
+.LAA500_SSH.pub

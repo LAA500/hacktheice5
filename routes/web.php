@@ -18,10 +18,21 @@ use Illuminate\Support\Facades\Route;
 Route::controller(Controllers\PageController::class)->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/shop/{shop:uuid}', 'shop')->name('shop');
+
+    Route::get('/profile', 'profile')->middleware('auth')->name('profile');
 });
 
-Auth::routes();
+Route::group(['prefix' => 'auth'], function () {
+    Auth::routes([
+        'logout' => false,
+        'verify' => false,
+    ]);
+
+    Route::get('/logout', [Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+});
+
+Route::get('/setCity/{city:uuid}', [Controllers\CityController::class, 'setCity'])->name('set_city');
 
 Route::prefix('/ajax')->name('ajax.')->group(function () {
-    Route::get('/setCity/{city:uuid}', [Controllers\CityController::class, 'setCity'])->name('set_city');
+    //
 });
