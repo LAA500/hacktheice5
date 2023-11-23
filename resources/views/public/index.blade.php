@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
     <div>
-        <div>
+        <div class="row">
             @foreach($city->shops as $shop)
             <div class="col-md-4">
                 <div class="Shop-card">

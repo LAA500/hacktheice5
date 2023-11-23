@@ -8,7 +8,7 @@
             <div>
                 <div class="text-center mb-4">
                     <div>Ваш населенный пункт</div>
-                    <div class="fw-bold" data-bs-toggle="modal" data-bs-target="#city">{{session()->has('city.name') ?
+                    <div class="fw-bold" id="citySelectBtn" data-bs-toggle="modal" data-bs-target="#cityModal">{{session()->has('city.name') ?
                         session('city.name') : 'Выберите населенный пункт'}}</div>
                 </div>
                 <div class="Menu">

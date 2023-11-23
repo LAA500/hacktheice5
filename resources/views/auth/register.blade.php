@@ -87,7 +87,7 @@
                                     <div class="form-check">
                                         <input type="checkbox" class="form-check-input" name="accept" value="1"
                                             id="accept" checked>
-                                        <label class="form-check-label" for="accept">Я соглашаюсь с Пользовательским
+                                        <label class="form-check-label lh-1 small text-justify" for="accept">Я соглашаюсь с Пользовательским
                                             соглашением и Политикой обработки персональных данных</label>
                                     </div>
                                     @error('accept')

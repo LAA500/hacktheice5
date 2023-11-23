@@ -13,6 +13,7 @@ class CityController extends Controller
         session(['city' => [
             'name' => $city->name,
             'uuid' => $city->uuid,
+            'id' => $city->id,
         ]]);
 
         return redirect()->back();

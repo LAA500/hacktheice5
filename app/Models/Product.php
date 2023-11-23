@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
@@ -14,6 +15,11 @@ class Product extends Model
         'name',
         'description',
         'barcode',
+        'weight',
+    ];
+
+    protected $with = [
+        'category',
     ];
 
     public static function boot()
@@ -25,8 +31,27 @@ class Product extends Model
         });
     }
 
+    const UNITS = [
+        'PCS' => 'Штука (шт.)',
+        'PKG' => 'Упаковка (уп.)',
+    ];
+
     public function getRouteKeyName()
     {
         return 'uuid';
+    }
+
+    public function category():BelongsTo
+    {
+        return $this->belongsTo(Category::class)->withDefault();
+    }
+
+    public function getImageAttribute($image)
+    {
+        if (is_null($image)) {
+            return 'https://via.placeholder.com/350x350/292929/e3e3e3';
+        }
+
+        return $image;
     }
 }

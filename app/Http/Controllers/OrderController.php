@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use App\Services\OrderService;
+use Illuminate\Http\JsonResponse;
 
 class OrderController extends Controller
 {
@@ -13,7 +15,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::all();
+
+        return view('admin.orders.index', compact('orders'));
     }
 
     /**
@@ -27,9 +31,14 @@ class OrderController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreOrderRequest $request)
+    public function store(StoreOrderRequest $request, OrderService $orderService)
     {
-        //
+        $order = $orderService->create($request->validated());
+
+        return new JsonResponse([
+            'success' => true,
+            'order' => $order,
+        ]);
     }
 
     /**

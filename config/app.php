@@ -159,6 +159,7 @@ return [
         /*
          * Package Service Providers...
          */
+        \App\Providers\CartServiceProvider::class,
 
         /*
          * Application Service Providers...

@@ -2,16 +2,25 @@
 
 namespace App\Http\Requests;
 
+use App\Traits\FormRequestError;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreOrderRequest extends FormRequest
 {
+    use FormRequestError;
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
+    }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'phone' => (string) only_integers($this->phone),
+        ]);
     }
 
     /**
@@ -22,7 +31,18 @@ class StoreOrderRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => ['required', 'string'],
+            'phone' => ['required', 'string', 'digits:11', 'starts_with:7'],
+            'email' => ['required', 'email', 'string'],
+            'address' => ['required', 'string', 'min:10', 'max:200'],
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'name' => 'ваше имя',
+            'address' => 'адрес доставки',
         ];
     }
 }

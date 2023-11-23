@@ -30,7 +30,7 @@
                     <div class="row justify-content-around">
                         <div class="col-4">
                             <div class="Profile-menu-block">
-                                <a href="/orders">
+                                <a href="/profile/orders">
                                     <div class="Profile-menu-block-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#fff"
                                             viewBox="0 0 16 16">
@@ -58,7 +58,7 @@
                         </div>
                         <div class="col-4">
                             <div class="Profile-menu-block">
-                                <a href="/favorites">
+                                <a href="/profile/favorites">
                                     <div class="Profile-menu-block-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#fff"
                                             viewBox="0 0 16 16">

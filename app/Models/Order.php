@@ -13,8 +13,14 @@ class Order extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
+        'shop_id',
         'uuid',
         'total',
+        'user_id',
+
+        'name',
+        'phone',
+        'email',
     ];
 
     public static function boot()
@@ -31,20 +37,34 @@ class Order extends Model
         return 'uuid';
     }
 
-    public function city(): BelongsTo
+    public function shop(): BelongsTo
     {
-        return $this->belongsTo(City::class)->withDefault([
+        return $this->belongsTo(Shop::class)->withDefault([
             'name' => 'Не выбрано',
         ]);
     }
 
     public function products(): BelongsToMany
     {
-        return $this->belongsToMany(Product::class, 'order_product');
+        return $this->belongsToMany(Product::class, 'order_product')
+            ->withPivot([
+                'price',
+                'quantity',
+                'total'
+            ])->withTrashed();
     }
 
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class)->withDefault([
+            'name' => '—',
+            'phone' => '—',
+            'email' => '—',
+        ]);
+    }
+
+    public function getPhoneFormatAttribute()
+    {
+        return phone_format($this->phone);
     }
 }

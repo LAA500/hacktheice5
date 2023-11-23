@@ -19,7 +19,18 @@ class ShopFactory extends Factory
     {
         return [
             'city_id' => fake()->randomElement(City::pluck('id')),
-            'name' => fake()->word(),
+            'name' => fake()->randomElement([
+                'Айгуль',
+                'Колобок',
+                'Алеос',
+                'Хозмаркет',
+                'Ганза',
+                'Мясной двор',
+                'Поярков',
+                'Пекарня',
+                'Гурман',
+                'Экономыч',
+            ]),
             'address' => fake()->address(),
             'phone' => str_limit(fake()->e164PhoneNumber(), 11, ''),
             'schedule' => null,

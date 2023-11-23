@@ -68,9 +68,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $city = \App\Models\City::where('uuid', session('city.uuid'))->first();
         return User::create([
-            'city_id' => 1,
+            'city_id' => session('city.id') ?? 1,
             'name' => $data['name'],
             'email' => $data['email'],
             'phone' => $data['phone'],

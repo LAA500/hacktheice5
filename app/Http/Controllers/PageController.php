@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\City;
+use App\Models\Order;
 use App\Models\Shop;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(\App\Http\Middleware\RedirectIfCartIsEmpty::class)->only('checkout');
+    }
+
     public function index()
     {
         $districts = City::all()->groupBy('district');
@@ -27,10 +32,28 @@ class PageController extends Controller
         return view('public.shop', compact('shop'));
     }
 
-    public function profile()
+    public function cart()
     {
-        $user = Auth::user();
+        return view('public.cart');
+    }
 
-        return view('public.profile', compact('user'));
+    public function documents()
+    {
+        return view('public.documents');
+    }
+
+    public function delivery()
+    {
+        return view('public.delivery');
+    }
+
+    public function checkout()
+    {
+        return view('public.checkout');
+    }
+
+    public function complete(Order $order)
+    {
+        return view('public.complete', compact('order'));
     }
 }

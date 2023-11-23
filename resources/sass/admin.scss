@@ -1,0 +1,119 @@
+$link-decoration: none;
+
+@import "bootstrap/scss/bootstrap";
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: #eee;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+img,
+svg {
+    outline: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    -o-object-fit: contain;
+    object-fit: contain;
+    -o-object-position: center;
+    object-position: center;
+}
+
+.form-control-desc,
+.form-control-comment {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-top: 4px;
+}
+
+.required::after {
+    content: "*";
+    color: #ff0000;
+    margin-left: 4px;
+    font-size: 15px;
+}
+
+.form-control-loading:after {
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    height: 18px;
+    width: 18px;
+    border: 2px solid var(--bs-primary);
+    border-radius: 50%;
+    border-top-color: rgba(80, 80, 80, 0.5);
+    -webkit-animation: loader-spin 0.8s linear infinite;
+    animation: loader-spin 0.8s linear infinite;
+}
+
+.form-floating.form-control-loading select {
+    color: transparent;
+}
+
+.btn-loading:after {
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    height: 16px;
+    width: 16px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent !important;
+    -webkit-animation: loader-spin 0.8s linear infinite;
+    animation: loader-spin 0.8s linear infinite;
+}
+
+.btn-loading {
+    color: transparent !important;
+    position: relative;
+}
+
+@-webkit-keyframes loader-spin {
+    0% {
+        -webkit-transform: translate(-50%, -50%) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        -webkit-transform: translate(-50%, -50%) rotate(1turn);
+        transform: translate(-50%, -50%) rotate(1turn);
+    }
+}
+@keyframes loader-spin {
+    0% {
+        -webkit-transform: translate(-50%, -50%) rotate(0deg);
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        -webkit-transform: translate(-50%, -50%) rotate(1turn);
+        transform: translate(-50%, -50%) rotate(1turn);
+    }
+}
+
+.form-control-invalid {
+    color: #ff0000;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 4px 0;
+}
+
+header a {
+    color: #fff !important;
+}
