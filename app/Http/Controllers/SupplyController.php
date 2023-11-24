@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Supply;
 use App\Http\Requests\StoreSupplyRequest;
 use App\Http\Requests\UpdateSupplyRequest;
+use App\Models\Product;
 use App\Models\Warehouse;
 
 class SupplyController extends Controller
@@ -15,8 +16,9 @@ class SupplyController extends Controller
     public function index()
     {
         $supplies = Supply::all();
+        $products = Product::query()->where('quantity', '>', 0)->orderBy('quantity')->get();
 
-        return view('admin.supplies.index', compact('supplies'));
+        return view('admin.supplies.index', compact('supplies', 'products'));
     }
 
     /**
