@@ -56,7 +56,7 @@
         <div class="form-group">
             <button
                 type="submit"
-                class="btn btn-lg btn-primary"
+                class="btn btn-lg btn-primary fw-bold text-white"
                 :class="{ 'btn-loading': loader }"
                 :disabled="loader"
             >

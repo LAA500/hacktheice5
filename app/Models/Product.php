@@ -49,7 +49,7 @@ class Product extends Model
     public function getImageAttribute($image)
     {
         if (is_null($image)) {
-            return 'https://via.placeholder.com/350x350/292929/e3e3e3';
+            return 'https://via.placeholder.com/350x350/EBDBDE/7A87B8';
         }
 
         return $image;

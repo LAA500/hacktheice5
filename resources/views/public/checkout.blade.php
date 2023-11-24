@@ -9,7 +9,7 @@
             <h2 class="SectionTitle">Оформление заказа</h2>
         </div>
         <div class="SectionContent">
-            <div class="row">
+            <div class="row mt-4">
                 <div class="col-md-4">
                     <checkout></checkout>
                 </div>

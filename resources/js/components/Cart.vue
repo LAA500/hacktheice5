@@ -104,7 +104,7 @@
                     <div class="Cart-order_actions">
                         <button
                             type="button"
-                            class="btn btn-lg btn-primary"
+                            class="btn btn-lg btn-primary fw-bold text-white"
                             :class="{ 'btn-loading': loader }"
                             :disabled="loader"
                             @click="checkout"

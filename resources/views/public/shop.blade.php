@@ -12,9 +12,9 @@
                 <div>{{$shop->address}}</div>
             </div>
         </div>
-        <div class="row">
+        <div class="row g-3">
             @foreach($shop->products as $product)
-            <x-product-card class="col-md-3" :product="$product"></x-product-card>
+            <x-product-card class="col-6 col-md-3" :product="$product"></x-product-card>
             @endforeach
         </div>
     </div>

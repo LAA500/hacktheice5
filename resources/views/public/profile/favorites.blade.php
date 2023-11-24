@@ -21,10 +21,8 @@
                             <div class="Profile-menu-block">
                                 <a href="/profile/orders">
                                     <div class="Profile-menu-block-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#fff"
-                                            viewBox="0 0 16 16">
-                                            <path
-                                                d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#fff" viewBox="0 0 16 16">
+                                            <path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" />
                                         </svg>
                                     </div>
                                 </a>
@@ -34,10 +32,8 @@
                             <div class="Profile-menu-block">
                                 <a href="/cart">
                                     <div class="Profile-menu-block-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#fff"
-                                            viewBox="0 0 16 16">
-                                            <path
-                                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#fff" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
                                         </svg>
                                     </div>
                                 </a>
@@ -47,10 +43,8 @@
                             <div class="Profile-menu-block">
                                 <a href="/profile/favorites">
                                     <div class="Profile-menu-block-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#fff"
-                                            viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd"
-                                                d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#fff" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
                                         </svg>
                                     </div>
                                 </a>
@@ -62,19 +56,13 @@
         </div>
         <div class="Profile-orders mb-4">
             <div>
-                @forelse($orders as $order)
-                <div>
-                    <a class="fs-5" href="{{route('complete', $order)}}">Заказ №{{$order->id}} от {{$order->created_at->format('d.m.Y, H:i')}}</a>
-                </div>
-                @empty
                 <div>
                     <div class="my-4">
                         <div class="text-center">
-                            <div class="fs-4 fw-bold">Заказов нет</div>
+                            <div class="fs-4 fw-bold">Список желаний пуст</div>
                         </div>
                     </div>
                 </div>
-                @endforelse
             </div>
         </div>
 

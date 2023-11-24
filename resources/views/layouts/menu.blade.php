@@ -14,14 +14,20 @@
                 <div class="Menu">
                     <div class="mt-4">
                         <ul class="list-unstyled mb-0">
-                            <li class="d-flex align-items-center bb-line">
-                                <div class="ms-2"><a href="/delivery">Доставка и оплата</a></div>
+                            <li>
+                                <div>
+                                    <a href="/delivery">Доставка и оплата</a>
+                                </div>
                             </li>
-                            <li class="d-flex align-items-center bb-line">
-                                <div class="ms-2"><a href="/documents">Документы</a></div>
+                            <li>
+                                <div>
+                                    <a href="/documents">Документы</a>
+                                </div>
                             </li>
-                            <li class="d-flex align-items-center bb-line">
-                                <div class="ms-2"><a href="/addresses">Мои адреса</a></div>
+                            <li>
+                                <div>
+                                    <a href="/addresses">Мои адреса</a>
+                                </div>
                             </li>
                         </ul>
                     </div>
