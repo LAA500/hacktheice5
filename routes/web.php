@@ -47,7 +47,7 @@ Route::prefix('/ajax')->name('ajax.')->group(function () {
 Route::get('/select-role', [Controllers\SelectRoleController::class, 'index'])->middleware('auth')->name('select_role');
 Route::get('/select-role/set/{role}', [Controllers\SelectRoleController::class, 'set'])->middleware('auth')->name('select_role.set');
 
-Route::prefix('/admin')->name('admin.')->controller(Controllers\AdminController::class)->group(function () {
+Route::prefix('/admin')->name('admin.')->middleware('auth')->controller(Controllers\AdminController::class)->group(function () {
     Route::get('/dashboard', 'dashboard')->name('dashboard');
 
     Route::resource('products', Controllers\ProductController::class);

@@ -15,6 +15,9 @@
                     <a class="btn btn-primary w-100" href="{{route('select_role.set', $role->name)}}">{{$role->label}}</a>
                 </div>
                 @endforeach
+                <div class="col-md-3 mb-3 mx-auto">
+                    <a class="btn btn-primary w-100" href="{{route('select_role.set', 'customer')}}">Покупатель</a>
+                </div>
             </div>
         </div>
     </div>
